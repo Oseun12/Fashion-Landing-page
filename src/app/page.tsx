@@ -1,4 +1,5 @@
 import DesignPhilosophy from "./_components/CardSection";
+import Footer from "./_components/Footer";
 import Hero from "./_components/Hero";
 import InfiniteImageSlider from "./_components/ImageSlider";
 import PromoSection from "./_components/PromoSection";
@@ -12,6 +13,7 @@ export default function Home() {
       <FashionStats/>
       <DesignPhilosophy/>
       <PromoSection/>
+      <Footer/>
     </div>
   );
 }
