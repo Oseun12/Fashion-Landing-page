@@ -10,6 +10,20 @@ const fashionImages = [
   '/images/suit10.png',
   '/images/suit11.png',
   '/images/suit12.png',
+  '/images/suit1.png',
+  '/images/suit2.png',
+  '/images/suit6.png',
+  '/images/suit8.png',
+  '/images/suit10.png',
+  '/images/suit11.png',
+  '/images/suit12.png',
+  '/images/suit1.png',
+  '/images/suit2.png',
+  '/images/suit6.png',
+  '/images/suit8.png',
+  '/images/suit10.png',
+  '/images/suit11.png',
+  '/images/suit12.png',
 ];
 
 export default function InfiniteImageSlider() {

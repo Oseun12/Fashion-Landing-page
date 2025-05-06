@@ -72,7 +72,7 @@ export default function Example() {
                 <span className="sr-only">Your Company</span>
                 <img
                   alt=""
-                  src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600"
+                  src="images/logo-img.PNG"
                   className="h-8 w-auto"
                 />
               </a>
@@ -112,7 +112,7 @@ export default function Example() {
         </Dialog>
       </header>
 
-      <div className="relative isolate px-6 pt-14 lg:px-8">
+      <div className="relative isolate px-6 pt-4 lg:px-8">
         <div
           aria-hidden="true"
           className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
@@ -146,23 +146,13 @@ export default function Example() {
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <motion.a
                 href="#"
-                className="rounded-full bg-blue-600 px-8 py-2 md:py-3 text-lg font-medium text-white shadow-lg hover:bg-rose-700 transition-colors"
+                className="rounded-full bg-blue-600 px-8 py-2 md:py-3 text-lg font-medium text-white shadow-lg hover:bg-blue-700 transition-colors"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
                 Shop New Arrivals
               </motion.a>
-              <a 
-                href="#" 
-                className="group text-lg font-semibold text-white flex items-center gap-2"
-              >
-                Explore Collections
-                <span className="group-hover:translate-x-1 transition-transform">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <path d="M5 12h14M12 5l7 7-7 7"/>
-                  </svg>
-                </span>
-              </a>
+              
             </div>
           </div>
         </div>
