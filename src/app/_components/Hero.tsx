@@ -1,8 +1,9 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Dialog, DialogPanel } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import { motion } from 'framer-motion'
 
 const navigation = [
   { name: 'Home', href: '#' },
@@ -13,11 +14,23 @@ const navigation = [
 
 export default function Example() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 10);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, []);
 
   return (
-    <div className="bg-gray-900">
-      <header className="absolute inset-x-0 top-0 z-50">
-        <nav aria-label="Global" className="flex items-center justify-between p-6 lg:px-8 border-b border-b-gray-600">
+    <div className="bg-gray-900 ">
+      <header className=" fixed inset-x-0 top-0 z-50 ">
+        <nav aria-label="Global" className={`flex items-center justify-between p-6 lg:px-8 border-b border-b-gray-600 ${
+          scrolled
+          ? 'bg-gray-900 backdrop-blur-md border-b border-gray-200 shadow-sm'
+          : 'bg-transparent border-b border-gray-600'}`}>
           <div className="flex lg:flex-1">
             <a href="#" className="-m-1.5 p-1.5">
               <span className="sr-only">Your Company</span>
@@ -112,7 +125,7 @@ export default function Example() {
             className="relative left-[calc(50%-11rem)] aspect-1155/678 w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-linear-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
           />
         </div>
-        <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
+        <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-48">
           <div className="hidden sm:mb-8 sm:flex sm:justify-center">
             {/* <div className="relative rounded-full px-3 py-1 text-sm/6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
               Announcing our next round of funding.{' '}
@@ -123,22 +136,32 @@ export default function Example() {
             </div> */}
           </div>
           <div className="text-center">
-            <h1 className="text-5xl font-semibold tracking-tight text-balance text-white sm:text-7xl">
-              Data to enrich your online business
+            <h1 className="text-5xl font-bold tracking-wide text-balance text-white sm:text-7xl">
+              Elevate Your Style <span className="text-blue-400">Beyond Trends</span>
             </h1>
-            <p className="mt-8 text-lg font-medium text-pretty text-gray-400 sm:text-xl/8">
-              Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet
-              fugiat veniam occaecat.
+            <p className="mt-8 text-lg font-medium text-pretty text-gray-300 sm:text-xl/8">
+              Discover curated collections that blend timeless elegance with cutting-edge design. 
+              Each piece tells a story of craftsmanship and intentional style.
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
-              <a
+              <motion.a
                 href="#"
-                className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                className="rounded-full bg-blue-600 px-8 py-3.5 text-lg font-medium text-white shadow-lg hover:bg-rose-700 transition-colors"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
               >
-                Get started
-              </a>
-              <a href="#" className="text-sm/6 font-semibold text-gray-900">
-                Learn more <span aria-hidden="true">→</span>
+                Shop New Arrivals
+              </motion.a>
+              <a 
+                href="#" 
+                className="group text-lg font-semibold text-white flex items-center gap-2"
+              >
+                Explore Collections
+                <span className="group-hover:translate-x-1 transition-transform">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                  </svg>
+                </span>
               </a>
             </div>
           </div>
