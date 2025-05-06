@@ -146,7 +146,7 @@ export default function Example() {
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <motion.a
                 href="#"
-                className="rounded-full bg-blue-600 px-8 py-3.5 text-lg font-medium text-white shadow-lg hover:bg-rose-700 transition-colors"
+                className="rounded-full bg-blue-600 px-8 py-2 md:py-3 text-lg font-medium text-white shadow-lg hover:bg-rose-700 transition-colors"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
